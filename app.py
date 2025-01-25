@@ -81,9 +81,9 @@ pre6_encoded_df = pd.DataFrame(pre6_encoded,columns=one_hot_encoder_pre6.get_fea
 pre14_encoded = one_hot_encoder_pre14.transform([[pre14]]).toarray()
 pre14_encoded_df = pd.DataFrame(pre14_encoded,columns=one_hot_encoder_pre14.get_feature_names_out(['PRE14']))
 
-input_data = pd.concat([input_data.drop("DGN",axis=1),dgn_encoded_df],axis=1)
-input_data = pd.concat([input_data.drop("PRE6",axis=1),pre6_encoded_df],axis=1)
-input_data = pd.concat([input_data.drop("PRE14",axis=1),pre14_encoded_df],axis=1)
+input_data = pd.concat([input_data.reset_index(drop=True),dgn_encoded_df],axis=1)
+input_data = pd.concat([input_data.reset_index(drop=True),pre6_encoded_df],axis=1)
+input_data = pd.concat([input_data.reset_index(drop=True),pre14_encoded_df],axis=1)
 
 input_df_scaled = scaler.transform(input_data)
 input_df_scaled
