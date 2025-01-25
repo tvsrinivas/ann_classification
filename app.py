@@ -74,11 +74,11 @@ input_data = pd.DataFrame({
 
 
 
-dgn_encoded = one_hot_encoder_dgn.transform([[input_data['DGN']]]).toarray()
+dgn_encoded = one_hot_encoder_dgn.transform([[dgn]]).toarray()
 dgn_encoded_df = pd.DataFrame(dgn_encoded,columns=one_hot_encoder_dgn.get_feature_names_out(['DGN']))
-pre6_encoded = one_hot_encoder_pre6.transform([[input_data['PRE6']]]).toarray()
+pre6_encoded = one_hot_encoder_pre6.transform([[pre6]]).toarray()
 pre6_encoded_df = pd.DataFrame(pre6_encoded,columns=one_hot_encoder_pre6.get_feature_names_out(['PRE6']))
-pre14_encoded = one_hot_encoder_pre14.transform([[input_data['PRE14']]]).toarray()
+pre14_encoded = one_hot_encoder_pre14.transform([[pre14]]).toarray()
 pre14_encoded_df = pd.DataFrame(pre14_encoded,columns=one_hot_encoder_pre14.get_feature_names_out(['PRE14']))
 
 input_data = pd.concat([input_data.drop("DGN",axis=1),dgn_encoded_df],axis=1)
