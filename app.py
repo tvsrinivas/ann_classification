@@ -25,7 +25,7 @@ with open ('label_encoder_pre30.pkl','rb') as file:
     label_encoder_pre30=pickle.load(file)
 with open ('label_encoder_pre32.pkl','rb') as file:
     label_encoder_pre32=pickle.load(file)
-with open ('label_encoder_risk1Yr.pkl','rb') as file:
+with open ('label_encoder_risk1yr.pkl','rb') as file:
     label_encoder_risk1Yr=pickle.load(file)
 with open ('one_hot_encoder_dgn.pkl','rb') as file:
     one_hot_encoder_dgn=pickle.load(file)
